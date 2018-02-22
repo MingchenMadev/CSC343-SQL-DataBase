@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE RECIPES [
+<!ELEMENT RECIPES (RECIPE)+>
+<!ELEMENT RECIPE (INGREDIENTS , STEPS)>
+<!ATTLIST RECIPE name CDATA #REQUIRED>
+<!ATTLIST RECIPE type CDATA #IMPLIED>
+<!ATTLIST RECIPE keywords CDATA #IMPLIED>
+<!ELEMENT INGREDIENTS (INGREDIENT)+>
+<!ELEMENT INGREDIENT (NAME , QUANTITY)>
+<!ELEMENT NAME (#PCDATA)>
+<!ELEMENT QUANTITY EMPTY>
+<!ATTLIST QUANTITY amount CDATA #REQUIRED>
+<!ATTLIST QUANTITY units CDATA #IMPLIED>
+<!ELEMENT STEPS (STEP)+>
+<!ELEMENT STEP (#PCDATA)>
+]>
+<RECIPES>
+   <RECIPE name="hard-boiled egg" type="breakfast" keywords="protein easy">
+      <INGREDIENTS>
+         <INGREDIENT>
+             <NAME>egg</NAME>
+             <QUANTITY amount="1"/>
+         </INGREDIENT>
+      </INGREDIENTS>
+      <STEPS>
+         <STEP>
+            Boil for 12 minutes.
+         </STEP>
+      </STEPS>
+   </RECIPE>
+   <RECIPE name="grilled beef steak" type="dinner">
+      <INGREDIENTS>
+         <INGREDIENT>
+             <NAME>beef steak</NAME>
+             <QUANTITY amount="1000g"/>
+         </INGREDIENT>
+         <INGREDIENT>
+             <NAME>sauce</NAME>
+             <QUANTITY amount="300ml"/>
+         </INGREDIENT>
+      </INGREDIENTS>
+      <STEPS>
+         <STEP>
+            Grill for 3 minutes.
+         </STEP>
+         <STEP>
+            Put sauce.
+         </STEP>
+      </STEPS>
+   </RECIPE>
+</RECIPES>
+ 

@@ -1,0 +1,150 @@
+Question1:
+<?xml version="1.0" standalone="yes" ?>
+<GuestList>
+   <Event date="150113" start="1400" end="1630"/>
+   <Invitee nickname="Pumpkin" response="yes">
+      <Who age="7" email="diane@gmail.com">
+         <First>Catherine</First>
+         <Middle>Julia</Middle>
+         <Last>Fairgrieve</Last>
+      </Who>
+   </Invitee>
+   <Invitee response = "no">
+      <Who age="6" email="cm@gmail.com">
+         <First>Chloe</First>
+         <Last>McLaughlin</Last>
+      </Who>
+   </Invitee>
+</GuestList>
+
+OutPut:
+<?xml version="1.0" standalone="yes"?>
+<GuestList>
+   <Event date="150113" start="1400" end="1630"/>
+   <Invitee nickname="Pumpkin" response="yes">
+      <Who age="7" email="diane@gmail.com">
+         <First>Catherine</First>
+         <Middle>Julia</Middle>
+         <Last>Fairgrieve</Last>
+      </Who>
+   </Invitee>
+   <Invitee response="no">
+      <Who age="6" email="cm@gmail.com">
+         <First>Chloe</First>
+         <Last>McLaughlin</Last>
+      </Who>
+   </Invitee>
+</GuestList>
+
+Question2:
+1. GuestList, Event, Invitee
+2. Event
+3. GuestList
+4. date
+
+
+Question3:
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE RECIPES [
+   <!ELEMENT RECIPES (RECIPE)+>
+   <!ELEMENT RECIPE (INGREDIENTS, STEPS)>
+   <!ATTLIST RECIPE name CDATA #REQUIRED 
+                    type CDATA #IMPLIED
+                    keywords CDATA #IMPLIED>
+   <!ELEMENT INGREDIENTS (INGREDIENT)+>
+   <!ELEMENT INGREDIENT (NAME, QUANTITY)>
+   <!ELEMENT NAME (#PCDATA)>
+   <!ELEMENT QUANTITY EMPTY>
+   <!ATTLIST QUANTITY amount CDATA #REQUIRED>
+   <!ATTLIST QUANTITY units CDATA #IMPLIED>
+   <!ELEMENT STEPS (STEP+)>
+   <!ELEMENT STEP (#PCDATA)>
+]>
+<RECIPES>
+   <RECIPE name="hard-boiled egg" type="breakfast" keywords="protein easy">
+      <INGREDIENTS>
+         <INGREDIENT>
+             <NAME>egg</NAME>
+             <QUANTITY amount="1"/>
+         </INGREDIENT>
+      </INGREDIENTS>
+      <STEPS>
+         <STEP>
+            Boil for 12 minutes.
+         </STEP>
+      </STEPS>
+   </RECIPE>
+   <RECIPE name="grilled beef steak" type="dinner">
+      <INGREDIENTS>
+         <INGREDIENT>
+             <NAME>beef steak</NAME>
+             <QUANTITY amount="1000g"/>
+         </INGREDIENT>
+         <INGREDIENT>
+             <NAME>sauce</NAME>
+             <QUANTITY amount="300ml"/>
+         </INGREDIENT>
+      </INGREDIENTS>
+      <STEPS>
+         <STEP>
+            Grill for 3 minutes.
+         </STEP>
+         <STEP>
+            Put sauce.
+         </STEP>
+      </STEPS>
+   </RECIPE>
+</RECIPES>
+
+Output:
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE RECIPES [
+<!ELEMENT RECIPES (RECIPE)+>
+<!ELEMENT RECIPE (INGREDIENTS , STEPS)>
+<!ATTLIST RECIPE name CDATA #REQUIRED>
+<!ATTLIST RECIPE type CDATA #IMPLIED>
+<!ATTLIST RECIPE keywords CDATA #IMPLIED>
+<!ELEMENT INGREDIENTS (INGREDIENT)+>
+<!ELEMENT INGREDIENT (NAME , QUANTITY)>
+<!ELEMENT NAME (#PCDATA)>
+<!ELEMENT QUANTITY EMPTY>
+<!ATTLIST QUANTITY amount CDATA #REQUIRED>
+<!ATTLIST QUANTITY units CDATA #IMPLIED>
+<!ELEMENT STEPS (STEP)+>
+<!ELEMENT STEP (#PCDATA)>
+]>
+<RECIPES>
+   <RECIPE name="hard-boiled egg" type="breakfast" keywords="protein easy">
+      <INGREDIENTS>
+         <INGREDIENT>
+             <NAME>egg</NAME>
+             <QUANTITY amount="1"/>
+         </INGREDIENT>
+      </INGREDIENTS>
+      <STEPS>
+         <STEP>
+            Boil for 12 minutes.
+         </STEP>
+      </STEPS>
+   </RECIPE>
+   <RECIPE name="grilled beef steak" type="dinner">
+      <INGREDIENTS>
+         <INGREDIENT>
+             <NAME>beef steak</NAME>
+             <QUANTITY amount="1000g"/>
+         </INGREDIENT>
+         <INGREDIENT>
+             <NAME>sauce</NAME>
+             <QUANTITY amount="300ml"/>
+         </INGREDIENT>
+      </INGREDIENTS>
+      <STEPS>
+         <STEP>
+            Grill for 3 minutes.
+         </STEP>
+         <STEP>
+            Put sauce.
+         </STEP>
+      </STEPS>
+   </RECIPE>
+</RECIPES>

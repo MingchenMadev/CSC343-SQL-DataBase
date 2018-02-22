@@ -1,0 +1,106 @@
+Mingchen Ma                          998964072                               cdf:c1maming
+
+1.
+Query:
+SELECT COUNT(countrycode) AS numofcountries
+FROM csc343countrylanguage
+WHERE csc343countrylanguage.isofficial = 't' 
+AND csc343countrylanguage.countrylanguage = 'English';
+
+ numofcountries
+----------------
+             44
+(1 row)
+
+
+2.
+Query:
+SELECT countrylanguage, COUNT(countrycode) AS numofcountries
+FROM csc343countrylanguage
+WHERE isofficial = 'T'
+GROUP BY countrylanguage
+ORDER BY numofcountries DESC LIMIT 5;
+
+ countrylanguage | numofcountries
+-----------------+----------------
+ English         |             44
+ Arabic          |             22
+ Spanish         |             20
+ French          |             18
+ Portuguese      |              6
+(5 rows)
+
+
+3.
+Query:
+SELECT countrylanguage, COUNT(countrycode) AS numofcountries
+FROM csc343countrylanguage
+GROUP BY countrylanguage
+ORDER BY numofcountries DESC LIMIT 5;
+
+ countrylanguage | numofcountries
+-----------------+----------------
+ English         |             60
+ Arabic          |             33
+ Spanish         |             28
+ French          |             25
+ Chinese         |             19
+(5 rows)
+
+4.
+Query:
+SELECT countrylanguage, percentage*population/100 AS numofpeople
+FROM csc343countrylanguage
+INNER JOIN csc343country
+ON csc343country.code = csc343countrylanguage.countrycode
+WHERE csc343country.name = 'Canada';
+
+ countrylanguage  |   numofpeople
+------------------+------------------
+ English          | 18812788.4752655
+ French           | 7288397.88118362
+ Chinese          |           778675
+ Italian          | 529499.014852047
+ German           | 498352.007426023
+ Polish           | 218028.996286988
+ Spanish          | 218028.996286988
+ Portuguese       | 218028.996286988
+ Punjabi          | 218028.996286988
+ Ukrainian        | 186882.007426023
+ Dutch            |           155735
+ Eskimo Languages | 31147.0004641265
+(12 rows)
+
+5.
+Query:
+SELECT countrylanguage, SUM(percentage*population/100) AS numofpeople
+FROM csc343countrylanguage
+INNER JOIN csc343country
+ON csc343country.code = csc343countrylanguage.countrycode
+GROUP BY countrylanguage
+HAVING ROUND(SUM(percentage*population/100)) > 50000000
+ORDER BY numofpeople DESC;
+
+ countrylanguage |   numofpeople    
+-----------------+------------------
+ Chinese         | 1191843539.22187
+ Hindi           | 405633085.474659
+ Spanish         | 355029461.907821
+ English         | 347077860.651048
+ Arabic          |  233839240.44018
+ Bengali         | 209304713.125095
+ Portuguese      | 177595269.439995
+ Russian         | 160807559.897025
+ Japanese        | 126814106.084933
+ Punjabi         | 104025371.706806
+ German          | 92133587.0430592
+ Javanese        |  83570161.236496
+ Telugu          | 79065637.9334068
+ Marathi         | 75019094.9665654
+ Korean          | 72291373.1146914
+ Vietnamese      | 70616220.4468264
+ French          | 69980879.2383475
+ Tamil           | 68691538.0299795
+ Urdu            | 63589468.8840628
+ Turkish         |   62205656.07252
+ Italian         | 59864482.4274508

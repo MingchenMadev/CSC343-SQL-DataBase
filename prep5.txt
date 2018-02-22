@@ -1,0 +1,89 @@
+Student Name: Mingchen Ma cdfusername: c1maming Student Number: 998964072
+
+CSC343 Prep5
+Q1. Query: SELECT name FROM csc343country WHERE code ='LKA';
+
+   name
+-----------
+ Sri Lanka
+
+Q2. Query: select name, population FROM csc343country WHERE code = 'LKA';
+
+   name    | population
+-----------+------------
+ Sri Lanka |   18827000
+
+Q3. Query: SELECT name, population FROM csc343city where id = (SELECT capital FROM csc343country WHERE code = 'LKA');
+
+  name   | population
+---------+------------
+ Colombo |     645000
+
+Q4. Query: SELECT name, population FROM csc343country where continent = 'Africa' and population > 50000000;
+
+                 name                  | population
+---------------------------------------+------------
+ Egypt                                 |   68470000
+ Ethiopia                              |   62565000
+ Congo, The Democratic Republic of the |   51654000
+ Nigeria                               |  111506000
+
+Q5. Query: SELECT DISTINCT governmentform FROM csc343country ORDER BY governmentform;
+governmentform;
+
+----------------------------------------------
+ Administrated by the UN
+ Autonomous Area
+ Co-administrated
+ Commonwealth of the US
+ Constitutional Monarchy
+ Constitutional Monarchy (Emirate)
+ Constitutional Monarchy, Federation
+ Dependent Territory of Norway
+ Dependent Territory of the UK
+ Dependent Territory of the US
+ Emirate Federation
+ Federal Republic
+ Federation
+ Independent Church State
+ Islamic Emirate
+ Islamic Republic
+ Monarchy
+ Monarchy (Emirate)
+ Monarchy (Sultanate)
+ Nonmetropolitan Territory of France
+ Nonmetropolitan Territory of New Zealand
+ Nonmetropolitan Territory of The Netherlands
+ Occupied by Marocco
+ Overseas Department of France
+ Parlementary Monarchy
+ Parliamentary Coprincipality
+ Part of Denmark
+ People'sRepublic
+ Republic
+ Socialistic Republic
+ Socialistic State
+ Special Administrative Region of China
+ Territorial Collectivity of France
+ Territory of Australia
+ US Territory
+
+Q6. Query: SELECT COUNT(DISTINCT code) FROM csc343country;
+
+ count
+-------
+   239
+
+Q7. Query: SELECT continent, COUNT(DISTINCT code), avg(population) FROM csc343country Group BY continent;
+
+
+ continent   | count |          avg           
+---------------+-------+------------------------
+ Africa        |    58 |  13525431.034482758621
+ Antarctica    |     5 | 0.00000000000000000000
+ Asia          |    51 |  72647562.745098039216
+ Europe        |    46 |  15871186.956521739130
+ North America |    37 |  13053864.864864864865
+ Oceania       |    28 |   1085755.357142857143
+ South America |    14 |  24698571.428571428571
+
